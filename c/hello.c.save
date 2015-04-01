@@ -1,0 +1,7 @@
+# include <stdio.h>
+# include <inttypes.h>
+int main(){ 
+	intmax_t=34232323234234232323;
+	printf
+}
+
