@@ -1,6 +1,7 @@
+import System.IO.Strict
 
 array :: [Int] -> Int -> (Int, Bool)
-array xs k = foldl (\acc x -> if mod (x + fst acc) k /= 0 then ((x + fst acc), True) else ((x + fst acc), False)) (0, False) xs
+array xs k = foldl (\acc x -> if mod (x + fst acc) k /= 0 then ((x + fst acc + 1), True) else ((x + fst acc), False)) (0, False) xs
 
 ans xs k = if bool then ans - 1 else ans
     where bool = snd seq

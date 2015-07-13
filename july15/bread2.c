@@ -18,10 +18,11 @@ void main(void){
 
         for(i = 0; i < ndays; i++){
             x = a[i];
-            /*if (carry > x){
+            if (carry > x){
                 carry = carry - x;
+                if (carry > 0) carry -= 1;
                 continue;
-            }*/
+            }
             inc = (x - carry)/maxP;
             left = (x - carry) - (maxP * inc);
             //printf("(x %ld - carry %ld)/ maxP %ld = inc %ld\n", x, carry, maxP, inc);
@@ -33,11 +34,8 @@ void main(void){
                     carry = 0;
             }
             else if (left == 0){
-                if (inc != 0) {
-                    carry = 0;
-                    n += inc;
-                }
-                else carry = carry - x;
+                carry = 0;
+                n += inc;
             }
             //printf("x -> carry -> n %ld -> %ld -> %ld \n", x , carry, n);
         }
